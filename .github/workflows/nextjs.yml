@@ -51,8 +51,9 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
+          path: ${{ github.workspace }}/frontend
           node-version: "20"
-          cache: ${{ github.workspace }}/frontend/{{ steps.detect-package-manager.outputs.manager }}
+          cache: ${{ steps.detect-package-manager.outputs.manager }}
       - name: Setup Pages
         uses: actions/configure-pages@v4
         with:
