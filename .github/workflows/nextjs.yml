@@ -51,14 +51,16 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: "14" # Update the Node.js version here
           cache: ${{ steps.detect-package-manager.outputs.manager }}
       - name: Setup Pages
         uses: actions/configure-pages@v4
         with:
+          path: |
+            "${{ github.workspace }}/frontend/package-lock.json"
           # Automatically inject basePath in your Next.js configuration file and disable
           # server side image optimization (https://nextjs.org/docs/api-reference/next/image#unoptimized).
-          #
+          
           # You may remove this line if you want to manage the configuration yourself.
           static_site_generator: next
       - name: Restore cache
