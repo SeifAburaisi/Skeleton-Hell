@@ -1,11 +1,8 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
-import Image from "next/image";
 import SkeletonLoad from "../components/skeleton";
-import Card from "../components/card";
 
 export default function Home() {
   interface PersonData {
