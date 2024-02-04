@@ -8,7 +8,16 @@ import SkeletonLoad from "../components/skeleton";
 import Card from "../components/card";
 
 export default function Home() {
-  const [data, setData] = useState(null);
+  interface PersonData {
+    name: string;
+    birth_year: string;
+    eye_color: string;
+    gender: string;
+    hair_color: string;
+    height: string;
+    mass: string;
+  }
+  const [data, setData] = useState<PersonData | null>(null);;
   const [isLoading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -43,7 +52,7 @@ export default function Home() {
 
         <div className="card__body">
           <div className="card__body body__text" id="card-details">
-            Birth Year: ${data.birth_year}
+            Birth Year: {(data as { birth_year: string }).birth_year}
           </div>
           <div className="card__body body__text" id="card-details">
             Eye Color: ${data.eye_color}
